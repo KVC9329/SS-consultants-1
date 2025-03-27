@@ -9,12 +9,12 @@
 body {
   text-align: center;
   color: white;
+  background: linear-gradient(to bottom, #baebff, #7fd6ff, #baebff);
 }
 
 section {
   width: 100vw;
   padding-top: 170px;
-  background-color: #baebff;
 }
 
 section h1 {
@@ -72,10 +72,10 @@ li {
 }
 
 .nav-links a {
-  color: white;
+  color: #2771e0;
   text-decoration: none;
   font-size: 50px;
-  background-color: #2771e0;
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
 }
@@ -133,8 +133,8 @@ li {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: #1053b8;
-  color: rgb(255, 255, 255);
+  background: #ffffff;
+  color: #1053b8;
   padding: 15px 20px;
   border-radius: 25px;
   font-size: 16px;
@@ -144,7 +144,8 @@ li {
 }
 
 .floating-button:hover {
-  background: #5a50e7;
+  background: #1053b8;
+  color: white;
   border-radius: 20px;
 }
 
@@ -189,11 +190,12 @@ li {
   border-radius: 20px;
   border-style: solid;
   border-bottom-style: dotted;
+  background-color: white;
 }
 
 .blog-list li:hover {
-  background-color: #f6f5f9;
-  color: black;
+  background-color: #e2e6e6;
+  color: #000;
 }
 
 #ai-recruitment p {
@@ -464,11 +466,13 @@ h2 {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background-color: white;
+  background-color: transparent;
   opacity: 80%;
   height: 450px;
   margin: 30px;
   border-radius: 20px;
+  border: rgb(8, 8, 8);
+  border-style: solid;
 }
 
 .table-container .card h3 {
@@ -476,10 +480,10 @@ h2 {
 }
 
 .card {
-  border-width: 2px;
+  border-width: 3px;
   border-style: solid;
-  background: white;
-  opacity: 80%;
+  border-color: #000000; /* Explicitly set border color */
+  background: rgba(255, 255, 255); /* White background with 80% opacity */
   color: black;
   border-radius: 10px;
   padding: 10px;
@@ -497,18 +501,10 @@ h2 {
 }
 
 .card:hover {
-  background: #98e6e9;
+  background: #abb3ff;
   transform: scale(1.03);
-  /* color: white; */
-}
-
-.card h3:hover {
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
-.card p {
-  color: #030303;
+  border: transparent;
+  color: white;
 }
 
 @media (max-width: 600px) {
@@ -551,12 +547,13 @@ h2 {
 }
 
 .nav-links a {
-  color: white;
+  /* color: white; */
   text-decoration: none;
   font-size: 15px;
-  background-color: #2771e0;
+  /* background-color: #2771e0; */
   padding: 10px;
   border-radius: 10px;
+  font-weight: 500;
 }
 
 .logo img {
