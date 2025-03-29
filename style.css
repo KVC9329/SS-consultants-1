@@ -9,12 +9,15 @@
 body {
   text-align: center;
   color: white;
-  background: linear-gradient(to bottom, #baebff, #7fd6ff, #baebff);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1006%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(200%2c 225%2c 252%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c115 C 57.6%2c135.4 172.8%2c224 288%2c217 C 403.2%2c210 460.8%2c90.2 576%2c80 C 691.2%2c69.8 748.8%2c166 864%2c166 C 979.2%2c166 1036.8%2c63.4 1152%2c80 C 1267.2%2c96.6 1382.4%2c215.2 1440%2c249L1440 560L0 560z' fill='rgba(227%2c 241%2c 255%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c391 C 96%2c423.4 288%2c557.4 480%2c553 C 672%2c548.6 768%2c371.2 960%2c369 C 1152%2c366.8 1344%2c507.4 1440%2c542L1440 560L0 560z' fill='rgba(210%2c 232%2c 255%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1006'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
 }
 
 section {
   width: 100vw;
-  padding-top: 170px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding-top: -30px;
+  height: 100vh;
 }
 
 section h1 {
@@ -507,6 +510,16 @@ h2 {
   color: white;
 }
 
+.ai-container {
+  display: flex;
+}
+
+.ai-png {
+  width: 200px;
+  height: 250px;
+  overflow-y: hidden;
+}
+
 @media (max-width: 600px) {
   .header {
     flex-direction: column;
@@ -569,7 +582,7 @@ h2 {
 
 .feature-container {
   max-width: 900px;
-  margin: 40px auto;
+  /* margin: 40px auto; */
   text-align: center;
 }
 .feature-container p {
@@ -602,8 +615,8 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   transition: background 0.3s, transform 0.2s;
   cursor: pointer;
 }
@@ -619,6 +632,9 @@ h2 {
 }
 
 @media (max-width: 480px) {
+  .ai-container {
+    visibility: hidden;
+  }
   .grid {
       grid-template-columns: repeat(1);
   }
