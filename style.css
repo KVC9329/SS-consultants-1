@@ -672,6 +672,9 @@ h2 {
 @media (max-width: 480px) {
   .ai-png-cont {
     display: none;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
   }
   .grid {
       grid-template-columns: repeat(1);
@@ -701,6 +704,10 @@ h2 {
 
   .feature-container {
     width: 100vw;
+  }
+
+  .ai-png-cont .ai-png img{
+    padding-top: 70px;  
   }
 }
 #counters {
