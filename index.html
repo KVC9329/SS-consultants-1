@@ -25,6 +25,11 @@
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader"></div>
+    </div>
+
   <div class="header">
     <div class="logo">
       <a href="#content" onclick="smoothScroll(event, 'content')""><img src=" logo.png" alt="SS Consultants Logo"></a>
@@ -166,7 +171,7 @@
     </p>
     <ol>
       <li>
-        <div class="container" style="background-image: url('https://i.ibb.co/Q39H8myW/finance.jpg');">
+        <div class="container" style="background-image: url('https://i.ibb.co/Q39H8myW/finance.jpg');" class="lazy-bg">
           <div class="text-overlay">
             <h1 style="color: white;">Finance</h1>
             <p>Offering finance specialists to maximize investment opportunities.</p>
@@ -175,7 +180,7 @@
       </li>
 
       <li>
-        <div class="container" style="background-image: url('https://i.ibb.co/whz96Sgx/bpo.jpg'); ">
+        <div class="container" style="background-image: url('https://i.ibb.co/whz96Sgx/bpo.jpg');" class="lazy-bg">
           <div class="text-overlay">
             <h1 style="color: white;">BPO</h1>
             <p>Providing efficient resources for streamlined customer support and service.</p>
@@ -184,7 +189,7 @@
       </li>
 
       <li>
-        <div class="container" style="background-image: url('https://i.ibb.co/7JcnmX8B/IT.jpg');">
+        <div class="container" style="background-image: url('https://i.ibb.co/7JcnmX8B/IT.jpg');" class="lazy-bg">
           <div class="text-overlay">
             <h1 style="color: white;">IT & Technology</h1>
             <p>Delivering talented tech professionals for cutting-edge solutions.</p>
@@ -193,7 +198,7 @@
       </li>
 
       <li>
-        <div class="container" style="background-image: url('https://i.ibb.co/X6ccxys/hospital.jpg');">
+        <div class="container" style="background-image: url('https://i.ibb.co/X6ccxys/hospital.jpg');" class="lazy-bg">
           <div class="text-overlay">
             <h1 style="color: white;">Hospitality</h1>
             <p>Supplying committed staff to ensure exceptional guest experiences.</p>
@@ -202,7 +207,7 @@
       </li>
 
       <li>
-        <div class="container" style="background-image: url('https://i.ibb.co/xkhjgLw/Banking.jpg');">
+        <div class="container" style="background-image: url('https://i.ibb.co/xkhjgLw/Banking.jpg');" class="lazy-bg">
           <div class="text-overlay">
             <h1 style="color: white;">Banking</h1>
             <p>Offers financial services including deposits, loans, and money management to individuals and businesses.
@@ -212,7 +217,7 @@
       </li>
 
       <li>
-        <div class="container" style="background-image: url('https://i.ibb.co/zV3JtQHx/edutech.jpg');">
+        <div class="container" style="background-image: url('https://i.ibb.co/zV3JtQHx/edutech.jpg');" class="lazy-bg">
           <div class="text-overlay">
             <h1 style="color: white;">Edutech</h1>
             <p>Equipping businesses with educators and developers for impactful learning solutions.</p>
@@ -221,7 +226,7 @@
       </li>
 
       <li>
-        <div class="container" style="background-image: url('https://i.ibb.co/kswfZ7MV/fintech.jpg');">
+        <div class="container" style="background-image: url('https://i.ibb.co/kswfZ7MV/fintech.jpg');" class="lazy-bg">
           <div class="text-overlay">
             <h1 style="color: white;">Fintech</h1>
             <p>Enabling access to innovators driving advancements in financial technology.</p>
@@ -230,7 +235,7 @@
       </li>
 
       <li>
-        <div loading="lazy" class="container" style="background-image: url('https://i.ibb.co/fdLG51fn/retail.jpg');">
+        <div loading="lazy" class="container" style="background-image: url('https://i.ibb.co/fdLG51fn/retail.jpg');" class="lazy-bg">
           <div class="text-overlay">
             <h1 style="color: white;">Retail</h1>
             <p>Bringing in marketing and sales experts to elevate customer engagement.</p>
@@ -239,7 +244,7 @@
       </li>
 
       <li>
-        <div class="container" style="background-image: url('https://i.ibb.co/whsLk1h4/fmcg.jpg');">
+        <div class="container" style="background-image: url('https://i.ibb.co/whsLk1h4/fmcg.jpg');" class="lazy-bg">
           <div class="text-overlay">
             <h1 style="color: white;">FMCG</h1>
             <p>Industry focused on the production and distribution of everyday consumer goods like food, beverages, and
@@ -249,7 +254,7 @@
       </li>
 
       <li>
-        <div class="container" style="background-image: url('https://i.ibb.co/svHRhxmb/nbfc.jpg');">
+        <div class="container" style="background-image: url('https://i.ibb.co/svHRhxmb/nbfc.jpg');" class="lazy-bg">
           <div class="text-overlay">
             <h1 style="color: white;">NBFC</h1>
             <p>Providing financial services like loans and investments without holding a banking license.</p>
@@ -258,7 +263,7 @@
       </li>
 
       <li>
-        <div class="container" style="background-image: url('https://i.ibb.co/S4YLRzHq/telecom.jpg');">
+        <div class="container" style="background-image: url('https://i.ibb.co/S4YLRzHq/telecom.jpg');" class="lazy-bg">
           <div class="text-overlay">
             <h1 style="color: white;">Telecom</h1>
             <p>Enhancing connectivity with professionals skilled in telecommunications.</p>
@@ -328,6 +333,22 @@
     <br>
     <P><span>Email : </span>business@ssconsultants.services</P>
   </footer>
+  <script>
+    const lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.style.backgroundImage = `url('${el.dataset.bg}')`;
+          observer.unobserve(el);
+        }
+      });
+    });
+
+    lazyBackgrounds.forEach(bg => observer.observe(bg));
+  </script>
+
   <script>
     function contactUs() {
       alert("Redirecting to contact form...");
@@ -500,6 +521,18 @@
       options: {
         responsive: true
       }
+    });
+  </script>
+
+  <script>
+    // Wait for the entire page to load
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      const content = document.getElementById('content');
+
+      // Hide preloader and show content
+      preloader.style.display = 'none';
+      content.style.display = 'block';
     });
   </script>
 </body>
